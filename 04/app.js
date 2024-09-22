@@ -2,17 +2,14 @@ const divs = document.querySelectorAll("div");
 const body = document.querySelector("body");
 
 function onDivClick(e, time) {
-  let cList = e.currentTarget.classList;
-  // cList.add("clicked");
+  const cList = e.currentTarget.classList;
   setTimeout(() => {
-    console.log(time);
     cList.add("clicked");
   }, time);
 }
 
 divs.forEach((div) => {
   const timeout = div.dataset.time;
-
   div.addEventListener("click", (e) => onDivClick(e, timeout));
 });
 
